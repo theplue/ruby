@@ -63,6 +63,12 @@ class StudentsController < ApplicationController
     end
   end
 
+  def search
+    @student = Student.where("fname like ?", "%#{params[:q]}%")
+    render :index
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_student

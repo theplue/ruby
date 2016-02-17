@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
-
+<div>
+<%= form_tag(search_students_url, method: "get") do %>
+    <%= label_tag(:q, "Search for:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("search") %>
+<% end %>
+</div>
 <h1>Listing Students</h1>
 
 <table>
