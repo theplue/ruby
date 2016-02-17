@@ -31,11 +31,6 @@
     <%= f.label :classTime %><br>
     <%= f.time_select :classTime %>
   </div>
-  <div class="field">
-    <%= f.label :student_fname %><br>
-    <%= f.collection_check_boxes(:student_fname,
-    @students, :id, :fname) %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

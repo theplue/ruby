@@ -1,3 +1,4 @@
 class Professor < ActiveRecord::Base
-  belongs_to :student
+  has_many :sections
+  has_many :students, through: :sections
 end
