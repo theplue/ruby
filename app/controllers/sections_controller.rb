@@ -53,6 +53,12 @@ class SectionsController < ApplicationController
     end
   end
 
+  # Search
+  def search
+    @sections = Section.where("number like ?", "%#{params[:q]}%")
+    render :index
+  end
+
   # DELETE /sections/1
   # DELETE /sections/1.json
   def destroy

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :sections
+  resources :sections do
+    collection do
+      get 'search'
+    end
+  end
   resources :courses
   resources :professors
   resources :students do
@@ -12,10 +16,13 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'students#index'
 
   # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+  get '/sections(.:format)' => 'sections#index'
+  get '/courses(.:format)' => 'courses#index'
+  get '/professors(.:format)' => 'professors#index'
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase

@@ -64,7 +64,7 @@ class StudentsController < ApplicationController
   end
 
   def search
-    @student = Student.where("fname like ?", "%#{params[:q]}%")
+    @students = Student.where( "fname like ?" , "%#{params[:q]}%")
     render :index
   end
 

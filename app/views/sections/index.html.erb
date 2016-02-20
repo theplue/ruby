@@ -1,8 +1,14 @@
 <p id="notice"><%= notice %></p>
-
+<div>
+<%= form_tag(search_sections_url, method: "get") do %>
+    <%= label_tag(:q, "Search for course:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("search") %>
+<% end %>
+</div>
 <h1>Listing Sections</h1>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Course</th>
