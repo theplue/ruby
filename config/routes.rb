@@ -4,8 +4,16 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :courses
-  resources :professors
+  resources :courses do
+    collection do
+      get 'search'
+    end
+  end
+  resources :professors do
+    collection do
+      get 'search'
+    end
+  end
   resources :students do
     collection do
       get 'search'

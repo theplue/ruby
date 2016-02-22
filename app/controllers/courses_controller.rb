@@ -50,7 +50,10 @@ class CoursesController < ApplicationController
       end
     end
   end
-
+  def search
+    @courses = Course.where( "name like ?" , "%#{params[:q]}%")
+    render :index
+  end
   # DELETE /courses/1
   # DELETE /courses/1.json
   def destroy
